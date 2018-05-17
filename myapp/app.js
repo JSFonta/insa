@@ -1,5 +1,12 @@
 const express = require('express')
 const app = express()
+let router = express.Router();
+
+// middleware that is specific to this router
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
