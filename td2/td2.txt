@@ -1,0 +1,29 @@
+Protocole
+ØMQ d'après Wikipedia :
+
+ZeroMQ (également écrit ØMQ, 0MQ ou ZMQ) est une bibliothèque de messagerie asynchrone haute performance, destinée à être utilisée dans des applications distribuées ou concurrentes. Il fournit une file d'attente de messages, mais contrairement au Message-oriented middleware, un système ZeroMQ peut fonctionner sans message broker. L'API de la bibliothèque est conçue pour ressembler à celle des sockets BSD.
+
+Prenez quelques minutes pour lire la préface, l'introduction du chapitre 1 puis survoler les exemples du guide de ØMQ : http://zguide.zeromq.org/page:all.
+
+Implémentation
+Cloner ce dépot :
+
+git clone https://github.com/dreimert/dia-td2.git
+Installation de l'implémentation node.js de ØMQ : https://github.com/zeromq/zeromq.js/
+
+npm install -S zeromq
+Installation de nodemon :
+
+npm install -S nodemon
+Mettre en place l'infrastructure suivante :
+
+2 à n producteurs qui engendre un nombre entre 1 et 100 tous les secondes, l'affiche et l'envoie sur le réseau avec la contrainte suivante :
+les nombres pairs vers un services qui les multiplie par 2 et soustrait 1
+les nombres impaires vers un services qui les multiplie par 3
+un service qui affiche les résultats des opérations
+Vous pouvez éditer les fichiers suivants :
+
+producteur.js
+multi-pairs.js
+multi-impairs.js
+loggueur.js
